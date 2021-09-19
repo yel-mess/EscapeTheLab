@@ -27,7 +27,7 @@
                     "name": "",
                     "id": "138a7887-f86a-48ab-b559-bb0850fed607",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
