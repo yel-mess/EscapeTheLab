@@ -20,7 +20,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""131099dd-98bb-4406-9117-0e8766b3837b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
