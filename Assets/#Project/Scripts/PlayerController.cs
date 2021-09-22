@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     private bool leftClickPressed = false;
+    //private GameObject gameObject;
+    public Vector2 speed = Vector2.zero;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private void Awake() { //Awake se lance avant le Start
         
     }
@@ -17,11 +22,19 @@ public class PlayerController : MonoBehaviour
         
     }
     void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
     void Update() {
         if(leftClickPressed) {
+            //récupère la position de la souris et bouge le joueur
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(mousePos.x, mousePos.y);
+
+            transform.position = new Vector2(mousePos.x, transform.position.y);
+            //flip le joueur
+            if(spriteRenderer == false) {
+                spriteRenderer.flipX = true;
+            }
             leftClickPressed = false;
         }
     }
