@@ -569,6 +569,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 128674082523659510, guid: 648dc067ea415814ebfb633b6c039033, type: 3}
+      propertyPath: movementSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 128674082523659515, guid: 648dc067ea415814ebfb633b6c039033, type: 3}
       propertyPath: m_Name
       value: shuffe(move)_0

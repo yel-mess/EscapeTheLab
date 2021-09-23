@@ -7,34 +7,31 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private bool leftClickPressed = false;
-    //private GameObject gameObject;
-    public Vector2 speed = Vector2.zero;
-    private Animator animator;
+    public float movementSpeed;
+    private bool isMoving;
+    Vector2 lastClickedPos;
     private SpriteRenderer spriteRenderer;
-    private void Awake() { //Awake se lance avant le Start
-        
-    }
-    
-    private void OnEnable() { //Est appelé quand les script est activé
-        
-    }
-    private void OnDisable() {
-        
-    }
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
     void Update() {
         if(leftClickPressed) {
+            //SetTargetPosition(); // méthode pour enregistrer la position de la souris
+            
             //récupère la position de la souris et bouge le joueur
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            transform.position = new Vector2(mousePos.x, transform.position.y);
-            //flip le joueur
-            if(spriteRenderer == false) {
-                spriteRenderer.flipX = true;
+            lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            isMoving = true;
+            if(isMoving && (Vector2)transform.position != lastClickedPos) {
+                float step = movementSpeed * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, step);
             }
+            else {
+                isMoving = false;
+            }
+            //Vector2 movement = new Vector2(mousePos.x, transform.position.y) * movementSpeed;
+
+            //transform.position = new Vector2(mousePos.x, transform.position.y);
             leftClickPressed = false;
         }
     }
