@@ -7,19 +7,15 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private bool leftClickPressed = false;
-    public float movementSpeed = 0f;
-    //private bool isMoving = false;
+    public float movementSpeed = 1f;
     Vector2 lastClickedPos;
-    //Vector2 destination;
     private SpriteRenderer spriteRenderer;
 
     void Start() {
-        //destination = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
         //animator = GetComponent<Animator>();
     }
 
-    // Move to the target end position.
     void Update() {
 
         float deplacement = movementSpeed * Time.deltaTime;
@@ -40,7 +36,6 @@ public class PlayerController : MonoBehaviour
 
                 transform.position = Vector2.Lerp(transform.position, lastClickedPos, deplacement);
 
-                //transform.position = Vector2.Lerp(transform.position, lastClickedPos, deplacement);
                 //transform.position = new Vector2(lastClickedPos.x, transform.position.y);
             }
             else {
@@ -53,8 +48,9 @@ public class PlayerController : MonoBehaviour
             //Vector2 movement = new Vector2(mousePos.x, transform.position.y) * movementSpeed;
 
             //transform.position = new Vector2(mousePos.x, transform.position.y);
-            leftClickPressed = false;
+            
         }
+        leftClickPressed = false;
     }
     public void Move(InputAction.CallbackContext context) {
         if (context.performed) {
