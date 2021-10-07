@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private bool leftClickPressed = false;
     //private bool isMoving;
-    //private bool rightClickpressed = false;
+    
     public float movementSpeed = 10f;
     Vector2 lastClickedPos;
     private SpriteRenderer spriteRenderer;
@@ -28,11 +28,17 @@ public class PlayerController : MonoBehaviour
             
         }
         if (lastClickedPos != (Vector2)transform.position) {
-            float deplacement = movementSpeed * Time.deltaTime;
+            if(lastClickedPos.x < transform.position.x && spriteRenderer.flipX == false) {
+                spriteRenderer.flipX = true;
+            }
+            else if (lastClickedPos.x > transform.position.x && spriteRenderer.flipX == true) {
+                spriteRenderer.flipX = false;
+            }
             //float remainingDistance = lastClickedPos.x - transform.position.x;
             //Vector2 direction = new Vector2 (x, 0).normalized;
             //transform.position = new Vector2(transform.position += remainingDistance), 0).normalized * deplacement;
 
+            float deplacement = movementSpeed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, deplacement);
         
         }
@@ -44,12 +50,7 @@ public class PlayerController : MonoBehaviour
             leftClickPressed = true;
         }
     }
-    public void Interact(InputAction.CallbackContext context) {
-        if (context.performed) {
-            Debug.Log("I'm doing something !");
-            //rightClickpressed = true;
-        }
-    }
+    
     
 }
 //pos + (click - pos).normalised * mov
