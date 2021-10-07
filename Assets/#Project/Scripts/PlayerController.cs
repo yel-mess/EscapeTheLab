@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private bool leftClickPressed = false;
-    public float movementSpeed = 1f;
+    //private bool isMoving;
+    //private bool rightClickpressed = false;
+    public float movementSpeed = 10f;
     Vector2 lastClickedPos;
     private SpriteRenderer spriteRenderer;
 
@@ -18,38 +20,23 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
 
-        float deplacement = movementSpeed * Time.deltaTime;
-
         if(leftClickPressed) {
             
             //récupère la position de la souris et bouge le joueur
             lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            if (lastClickedPos.x > transform.position.x) {
-
-                //bouger à droite
-
-                // Debug.Log("Je vais à droite");
-                // Vector2 right = Vector2.right;
-                // Vector2 translation = right * deplacement;
-                // transform.Translate(translation);
-
-                transform.position = Vector2.Lerp(transform.position, lastClickedPos, deplacement);
-
-                //transform.position = new Vector2(lastClickedPos.x, transform.position.y);
-            }
-            else {
-
-                //bouger à gauche
-                Debug.Log("Je vais à gauche");
-                //transform.position = new Vector2(lastClickedPos.x, transform.position.y);
-                transform.position = Vector2.Lerp(transform.position, lastClickedPos, deplacement);
-            }
-            //Vector2 movement = new Vector2(mousePos.x, transform.position.y) * movementSpeed;
-
-            //transform.position = new Vector2(mousePos.x, transform.position.y);
+            //isMoving = true;
             
         }
+        if (lastClickedPos != (Vector2)transform.position) {
+            float deplacement = movementSpeed * Time.deltaTime;
+            //float remainingDistance = lastClickedPos.x - transform.position.x;
+            //Vector2 direction = new Vector2 (x, 0).normalized;
+            //transform.position = new Vector2(transform.position += remainingDistance), 0).normalized * deplacement;
+
+            transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, deplacement);
+        
+        }
+            
         leftClickPressed = false;
     }
     public void Move(InputAction.CallbackContext context) {
@@ -58,8 +45,15 @@ public class PlayerController : MonoBehaviour
         }
     }
     public void Interact(InputAction.CallbackContext context) {
-        if (context.performed)
+        if (context.performed) {
             Debug.Log("I'm doing something !");
+            //rightClickpressed = true;
+        }
     }
     
 }
+//pos + (click - pos).normalised * mov
+//pour calculer la dernière distance il faut prendre min de mouv et différence entre (pos - click)
+
+//Vector2 pos
+//Vector2 dir = pos.normalized
