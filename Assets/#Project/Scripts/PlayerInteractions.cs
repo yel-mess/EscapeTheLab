@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    private bool rightClickpressed = false;
+    [HideInInspector]
+    public bool rightClickPressed = false;
 
     void Start()
     {
@@ -19,8 +20,8 @@ public class PlayerInteractions : MonoBehaviour
     }
     public void Interact(InputAction.CallbackContext context) {
         if (context.performed) {
-            Debug.Log("I'm doing something !");
-            rightClickpressed = true;
+            rightClickPressed = true;
+            Debug.Log("Interact works");
         }
     }
 }

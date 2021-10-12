@@ -1,25 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public string sceneName;
-    // Start is called before the first frame update
+    //[HideInInspector]
+    //public bool rightClickPressed = false;
+
+    //public string scene;
+    //public Sprite door;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        // if (rightClickPressed) {
+        //     Debug.Log("Update works");
+        //     //Change();
+        // }
+        //rightClickPressed = false;
+        if(Input.GetMouseButtonUp(1)) {
+            Debug.Log("Right click detected");
+            SceneManager.LoadScene("Couloir A");
+        }
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player"))
-            SceneManager.LoadScene(sceneName);
-
-    }
+    // public void Interact(InputAction.CallbackContext context) {
+    //     if (context.performed) {
+    //         rightClickPressed = true;
+    //         Debug.Log("Interact works");
+    //     }
+    // }
+    // private void Change() {
+    //     Debug.Log("Change works");
+    //     SceneManager.LoadScene("Couloir C");
+    // }
 }
