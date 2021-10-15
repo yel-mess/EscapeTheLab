@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &327391883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4175422971984984691, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
+  m_PrefabInstance: {fileID: 1287060254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
-  DoorCanva: {fileID: 2073721859}
+  ActionBox: {fileID: 2073721859}
+  ObjectType: {fileID: 327391883}
 --- !u!1 &1207364363
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +641,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4175422971984984691, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
   m_PrefabInstance: {fileID: 4961861527431963299}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2073721864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073721859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e608c3419e5e2c44b61c1531075fdc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &128674080668149613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -729,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175422971984984691, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: OpenCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 4542356618656186372, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
       propertyPath: m_Pivot.x
@@ -814,6 +832,10 @@ PrefabInstance:
     - target: {fileID: 4542356618656186372, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607599557250049238, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
+      propertyPath: m_Name
+      value: Open
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
@@ -941,5 +963,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorPrototype
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6687871067324832386, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}

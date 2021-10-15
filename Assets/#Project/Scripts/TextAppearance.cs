@@ -5,22 +5,32 @@ using UnityEngine.UI;
 
 public class TextAppearance : MonoBehaviour
 {
+    [HideInInspector]
     public Text text;
-    public GameObject DoorCanva;
+    public GameObject ActionBox; //Open
+    public GameObject ObjectType; //Couloir A
 
     void Start()
     {
-        DoorCanva.SetActive(false);
+        ActionBox.SetActive(false);
+        ObjectType.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        OnMouseOver();
+        Click();
     }
-    void OnMouseOver() {
+    public void OnMouseOver() {
+        
+        ObjectType.SetActive(true);
+        
+    }
+    public void OnMouseExit() {
+        ObjectType.SetActive(false);
+    }
+    public void Click() {
         if(Input.GetMouseButtonUp(1)) {
-            DoorCanva.SetActive(true);
+            ActionBox.SetActive(true);
         }
     }
 }
