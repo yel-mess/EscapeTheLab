@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TextAppearance : MonoBehaviour
 {
     [HideInInspector]
-    public Text text;
+    private bool actionIsActive = false;
+    private bool objectIsActive = false;
+
     public GameObject ActionBox; //Open
     public GameObject ObjectType; //Couloir A
 
@@ -18,19 +21,23 @@ public class TextAppearance : MonoBehaviour
 
     void Update()
     {
-        Click();
-    }
-    public void OnMouseOver() {
-        
-        ObjectType.SetActive(true);
-        
-    }
-    public void OnMouseExit() {
-        ObjectType.SetActive(false);
-    }
-    public void Click() {
-        if(Input.GetMouseButtonUp(1)) {
+        if(Input.GetMouseButtonUp(1) && actionIsActive == false) {
             ActionBox.SetActive(true);
         }
+        else if(Input.GetMouseButtonUp(1) && actionIsActive){
+            ActionBox.SetActive(false);
+        }
+    }
+    void OnMouseEnter() {
+        
+        objectIsActive = true;
+    }
+    void OnMouseOver() {
+        if(objectIsActive) {
+            ObjectType.SetActive(true);
+        }
+    }
+    void OnMouseExit() {
+        ObjectType.SetActive(false);
     }
 }
