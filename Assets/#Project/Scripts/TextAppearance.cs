@@ -8,36 +8,43 @@ public class TextAppearance : MonoBehaviour
 {
     [HideInInspector]
     private bool actionIsActive = false;
-    private bool objectIsActive = false;
-
-    public GameObject ActionBox; //Open
-    public GameObject ObjectType; //Couloir A
+    public GameObject actionBox; //Open
+    public GameObject objectType; //Couloir A
+    Vector2 mousePos;
+    //private bool objectIsActive = false;
+    //private string text = "Couloir A";
+    //private string currentToolTipText = "";
+    //private string guiStyleFore = GUIStyle;
 
     void Start()
     {
-        ActionBox.SetActive(false);
-        ObjectType.SetActive(false);
+        actionBox.SetActive(false);
+        objectType.SetActive(false);
     }
 
     void Update()
     {
         if(Input.GetMouseButtonUp(1) && actionIsActive == false) {
-            ActionBox.SetActive(true);
+            actionBox.SetActive(true);
         }
         else if(Input.GetMouseButtonUp(1) && actionIsActive){
-            ActionBox.SetActive(false);
+            actionBox.SetActive(false);
         }
-    }
-    void OnMouseEnter() {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        objectType.transform.position = new Vector2(mousePos.x, mousePos.y-1);
         
-        objectIsActive = true;
     }
+    // void OnMouseEnter() {
+        
+    //     objectIsActive = true;
+    // }
     void OnMouseOver() {
-        if(objectIsActive) {
-            ObjectType.SetActive(true);
-        }
+        Debug.Log("Mouse is over GameObject");
+        objectType.SetActive(true);
     }
     void OnMouseExit() {
-        ObjectType.SetActive(false);
+        Debug.Log("Mouse is no longer on GameObject");
+        objectType.SetActive(false);
     }
 }
