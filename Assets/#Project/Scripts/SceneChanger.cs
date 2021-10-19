@@ -6,38 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    //[HideInInspector]
-    //public bool rightClickPressed = false;
-
-    //public string scene;
-    //public Sprite door;
-
-    void Start()
-    {
-        
+    public string sceneName;
+    public GameObject openText;
+    void Start() {
+        openText = GetComponent<GameObject>();
     }
-
-
     void Update()
     {
-        // if (rightClickPressed) {
-        //     Debug.Log("Update works");
-        //     //Change();
-        // }
-        //rightClickPressed = false;
+        Change();
+    }
+    public void Change() {
         if(Input.GetMouseButtonUp(1)) {
-            Debug.Log("Right click detected");
-            SceneManager.LoadScene("Couloir A");
+            SceneManager.LoadScene(sceneName);
         }
     }
-    // public void Interact(InputAction.CallbackContext context) {
-    //     if (context.performed) {
-    //         rightClickPressed = true;
-    //         Debug.Log("Interact works");
-    //     }
-    // }
-    // private void Change() {
-    //     Debug.Log("Change works");
-    //     SceneManager.LoadScene("Couloir C");
-    // }
 }

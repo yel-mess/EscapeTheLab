@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool[] isFull; //check if the box is full for each item
+    public GameObject[] slots;
 }
