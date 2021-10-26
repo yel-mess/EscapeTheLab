@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private bool leftClickPressed = false;
-    //private bool isMoving;
+    //private bool isMoving = false;
+    //private Animator animator;
     
     public float movementSpeed = 10f;
     Vector2 lastClickedPos;
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
     void Update() {
 
         if(leftClickPressed) {
-            
+            //isMoving = true;
             //récupère la position de la souris et bouge le joueur
             lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //isMoving = true;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         }
         if (lastClickedPos.x != transform.position.x) {
             if(lastClickedPos.x < transform.position.x && spriteRenderer.flipX == false) {
+                //animator.SetBool("Left", true);
                 spriteRenderer.flipX = true;
             }
             else if (lastClickedPos.x > transform.position.x && spriteRenderer.flipX == true) {
@@ -41,9 +43,8 @@ public class PlayerController : MonoBehaviour
             float deplacement = movementSpeed * Time.deltaTime;
             lastClickedPos.y = 0f;
             transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, deplacement);
-        
         }
-            
+        //isMoving = false;
         leftClickPressed = false;
     }
     public void Move(InputAction.CallbackContext context) {
