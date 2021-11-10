@@ -4,14 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Hiding : MonoBehaviour, IPointerClickHandler
+public class Hiding : MonoBehaviour
 {
     public GameObject player;
+    //public Sprite hidingSpot;
     private bool isHiding = false;
 
+    void Awake(){
+        //player.SetActive(true);
+    }
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -19,10 +23,12 @@ public class Hiding : MonoBehaviour, IPointerClickHandler
     {
         
     }
-    public void OnPointerClick(PointerEventData eventData){
+    void OnMouseOver(){
         if(Input.GetMouseButtonUp(1)){
+            Debug.Log("Click detected");
             isHiding = !isHiding;
-            Debug.Log("Hiding !!");
+            Debug.Log(isHiding);
+            player.SetActive(!isHiding);
         }
     }
 }
