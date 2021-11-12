@@ -4039,7 +4039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896191245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.24}
+  m_LocalPosition: {x: 0, y: 0, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 838008889}
@@ -5752,7 +5752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758101574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.1, z: 0}
+  m_LocalPosition: {x: 0, y: -2.1, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6507,6 +6507,7 @@ GameObject:
   - component: {fileID: 2134354280}
   - component: {fileID: 2134354279}
   - component: {fileID: 2134354283}
+  - component: {fileID: 2134354284}
   m_Layer: 0
   m_Name: Wraith_0
   m_TagString: Untagged
@@ -6526,7 +6527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596920b486d1b4548b60e857ee1dcf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agroRange: 3
+  agroRange: 4.5
   deathRange: 0
   hitRange: 1
   moveSpeed: 2
@@ -6637,6 +6638,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &2134354284
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134354278}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.22645903, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 1.25, y: 0, z: 1, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 6}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.8002443, y: 6}
+  m_EdgeRadius: 0
 --- !u!1001 &3769543119330293065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6984,6 +7011,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1174091034, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1174091035, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
       propertyPath: objectType
       value: 
@@ -6994,7 +7025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6687871067324832389, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.87
+      value: 11.58
       objectReference: {fileID: 0}
     - target: {fileID: 6687871067324832389, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7002,7 +7033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6687871067324832389, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6687871067324832389, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
       propertyPath: m_LocalRotation.w

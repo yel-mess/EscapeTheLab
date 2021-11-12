@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Events;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -14,14 +15,15 @@ public class MonsterAI : MonoBehaviour
     //GameObject notice;
 
     [SerializeField]
-    Transform player; //keep track of the player
+    GameObject player; //keep track of the player
     Rigidbody2D rb2d; //il faut pouvoir accéder au rigidBody
     SpriteRenderer spriteRenderer;
+    //public UnityEvent whenTouchPlayer;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
@@ -75,38 +77,42 @@ public class MonsterAI : MonoBehaviour
         // transform.position += (Vector3)deplacement;
 
         if(distToPlayer < agroRange){
-            animator.SetBool("Notice", true);
-            
             ChasePlayer();
         }
         else {
             StopChasingPlayer();
         }
 
-        if(distToPlayer < deathRange){
-            //kills the player
-            KillPlayer();
-        }
+        // if(distToPlayer < deathRange){
+        //     //kills the player
+        //     KillPlayer();
+        // }
     }
     void ChasePlayer(){
         //si le monstre est à gauche, il se retourne et bouge
-        if(transform.position.x < player.position.x){
-            animator.SetBool("Notice", false);
+        if(transform.position.x < player.transform.position.x){
             rb2d.velocity = new Vector2(moveSpeed, 0);
             animator.SetBool("Right", true);
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), moveSpeed * Time.deltaTime);
         }
         else {
-            animator.SetBool("Notice", false);
             rb2d.velocity = new Vector2(-moveSpeed, 0);
             animator.SetBool("Right", false);
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), moveSpeed * Time.deltaTime);
         }
+        animator.SetBool("Notice", true);
     }
     void StopChasingPlayer(){
         rb2d.velocity = Vector2.zero;
+        animator.SetBool("Notice", false);
     }
-    void KillPlayer(){
-        
+    void OnTriggerEnter2D(Collider2D collision){
+        // if(collision.CompareTag("Player")){
+        //     whenTouchPlayer?.Invoke();
+        //     Destroy(player);
+        // }
+        if(collision.CompareTag("Player")){
+            Debug.Log("GAME OVER");
+        }
     }
 }
