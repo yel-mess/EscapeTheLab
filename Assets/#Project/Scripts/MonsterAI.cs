@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class MonsterAI : MonoBehaviour
 {
-    [SerializeField]
-    Transform player; //keep track of the player
-
-    [SerializeField]
-    float deathRange;
-
-    public float moveSpeed;
-    Rigidbody2D rb2d; //il faut pouvoir accéder au rigidBody
-    SpriteRenderer spriteRenderer;
-    public float hitRange;
-    Animator animator;
-
     //temporary
     public float agroRange;
+    Animator animator;
+    [SerializeField]
+    float deathRange;
+    public float hitRange;
+    public float moveSpeed;
+    //GameObject notice;
+
+    [SerializeField]
+    Transform player; //keep track of the player
+    Rigidbody2D rb2d; //il faut pouvoir accéder au rigidBody
+    SpriteRenderer spriteRenderer;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -75,6 +75,8 @@ public class MonsterAI : MonoBehaviour
         // transform.position += (Vector3)deplacement;
 
         if(distToPlayer < agroRange){
+            animator.SetBool("Notice", true);
+            
             ChasePlayer();
         }
         else {
@@ -89,11 +91,13 @@ public class MonsterAI : MonoBehaviour
     void ChasePlayer(){
         //si le monstre est à gauche, il se retourne et bouge
         if(transform.position.x < player.position.x){
+            animator.SetBool("Notice", false);
             rb2d.velocity = new Vector2(moveSpeed, 0);
             animator.SetBool("Right", true);
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), moveSpeed * Time.deltaTime);
         }
         else {
+            animator.SetBool("Notice", false);
             rb2d.velocity = new Vector2(-moveSpeed, 0);
             animator.SetBool("Right", false);
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), moveSpeed * Time.deltaTime);
