@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 10f;
     Vector2 lastClickedPos;
     private SpriteRenderer spriteRenderer;
+    public ItemViewController itemViewController;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();

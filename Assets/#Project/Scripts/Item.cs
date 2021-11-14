@@ -23,7 +23,6 @@ public class Item : MonoBehaviour
         if(Input.GetMouseButtonUp(1)){
             //ItemPickedUp = true;
             //s'ajoute à l'inventaire
-            Debug.Log("Item Clicked");
             //description de l'item (texte aparait)
 
             FindObjectOfType<Inventory>().AddItem(itemData);
