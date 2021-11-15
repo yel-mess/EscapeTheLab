@@ -5,8 +5,8 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     //private bool ItemPickedUp = false;
-    [HideInInspector]
-    public bool ItemIsdestroyed = false;
+    //[HideInInspector]
+    //public bool ItemIsdestroyed = false;
     public ItemData itemData;
     // Start is called before the first frame update
     void Start()
@@ -21,13 +21,11 @@ public class Item : MonoBehaviour
     }
     void OnMouseOver(){
         if(Input.GetMouseButtonUp(1)){
-            //ItemPickedUp = true;
-            //s'ajoute à l'inventaire
             //description de l'item (texte aparait)
 
             FindObjectOfType<Inventory>().AddItem(itemData);
             Destroy(gameObject);
-            ItemIsdestroyed = true;
+            //ItemIsdestroyed = true;
         }
     }
 }

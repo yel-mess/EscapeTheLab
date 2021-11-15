@@ -8,8 +8,13 @@ public class ItemViewController : MonoBehaviour
     public Transform inventoryViewParent; //references à Transform pour créer des objets ItemView en tant qu'enfant de Inventory view dans la scène
     public GameObject itemViewPrefab; // L'ItemView sauvegardé dans Prefab
 
-    Dictionary<ItemData, GameObject> itemsDisplayed = new Dictionary<ItemData, GameObject>();
-    int index = 0;
+    [HideInInspector]
+    public GameObject itemGO = null;
+
+    [HideInInspector]
+    public Dictionary<ItemData, GameObject> itemsDisplayed = new Dictionary<ItemData, GameObject>();
+    ItemView itemView;
+    //int index = 0;
 
     private void Start()
     {
@@ -21,24 +26,28 @@ public class ItemViewController : MonoBehaviour
 
         for (int i = 0; i < inventoryHolder.inventory.Count; i++)
         {
-            Debug.Log("adding item : " + index);
+            // Debug.Log("adding item : " + index);
             if (!itemsDisplayed.ContainsKey(inventoryHolder.inventory[i]))
             {
                 var itemGO = GameObject.Instantiate(itemViewPrefab, inventoryViewParent);
                 itemGO.GetComponent<ItemView>().InitItem(inventoryHolder.inventory[i]);
                 itemsDisplayed.Add(inventoryHolder.inventory[i], itemGO);
             }
-            index++;
-            Debug.Log(inventoryHolder.inventory.Count);
-            // if(inventoryHolder.inventory.Count < i){
-            //     break;
-            // }
+            
+            
+            // index++;
+            // Debug.Log(inventoryHolder.inventory.Count);
         }
+        //pour chaque objets dans l'inventaire
+
+            //si l'item se trouve dans l'inventaire ET qu'il correspond à l'objet correspondant
+            //OU
+            //si on a cliqué sur le boutton ET que l'item corresepond à l'objet correspondant
+            //alors on retire l'item
+
     }
     void Update()
     {
-        //if(item.ItemIsdestroyed == true){
-        //   Debug.Log("Item is in inventory !");
-        //}
+        
     }
 }
