@@ -14,10 +14,14 @@ public class PlayerController : MonoBehaviour
     Vector2 lastClickedPos;
     private SpriteRenderer spriteRenderer;
     public ItemViewController itemViewController;
+    
+    [HideInInspector]
+    public Rigidbody2D rb2d;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         //animator = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update() {

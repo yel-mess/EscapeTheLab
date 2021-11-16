@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance = null;
     public GameObject playerPrefab;
     public GameObject player;
+    public GameObject inventory;
+    public GameObject inventoryPrefab;
 
     void Awake()
     {
@@ -14,7 +16,9 @@ public class LevelManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             instance = this;
             player = Instantiate(playerPrefab);
+            inventory = Instantiate(inventoryPrefab);
             DontDestroyOnLoad(player);
+            DontDestroyOnLoad(inventory);
         }
         else {
             Destroy(gameObject);
