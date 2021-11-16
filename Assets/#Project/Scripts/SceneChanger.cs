@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class SceneChanger : MonoBehaviour
 {
     public string sceneName;
-    ItemClicked itemClicked;
-    ItemData itemData;
-    public string requiredItem;
+
+    //= Gamebject.Find("Item").GetComponent<ItemClicked>();
+    public ItemData itemData;
+    //public Gameobject itemPrefab;
+    public ItemData requiredItem;
     public bool isOpen = false;
     //Inventory itemInventory;
     void Start(){
@@ -29,16 +32,16 @@ public class SceneChanger : MonoBehaviour
         if(!isOpen && requiredItem == null){
             Debug.Log("Door is locked");
         }
-
         //porte fermée, peut s'ouvrir grâce à un objet
         else if (!isOpen && requiredItem != null){
-            if(itemClicked.selected){
-                if(requiredItem == GetComponent<ItemView>().itemData.itemName){
-                    isOpen = true;
-                    SceneManager.LoadScene(sceneName);
-                }
+            
+            if(ItemClicked.lastSelectedItem != null && requiredItem == ItemClicked.lastSelectedItem){
+                Debug.Log("correct item !");
+                isOpen = true;
+                SceneManager.LoadScene(sceneName);
             }
-            Debug.Log("Door is locked but you could open it");
+                
+            //Debug.Log("Door is locked but you could open it");
         }
 
         //porte ouverte

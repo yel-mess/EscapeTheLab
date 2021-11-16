@@ -12,7 +12,8 @@ public class ItemView : MonoBehaviour
     public Image ItemIcon;
 
     //UnityEvent UseItem = new UnityEvent();
-
+    
+    [HideInInspector]
     public ItemData itemData;
     ItemViewController itemViewController;
 

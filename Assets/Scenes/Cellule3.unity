@@ -7230,8 +7230,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1174091033, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
       propertyPath: requiredItem
-      value: Personnal ID card
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: d504ca18e8926654984ca77e903352a0, type: 2}
     - target: {fileID: 1174091034, guid: 8631b29cfd4987645b0d2b56fa048ae4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
