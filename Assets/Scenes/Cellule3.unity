@@ -6366,7 +6366,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 128674082523659515, guid: 648dc067ea415814ebfb633b6c039033, type: 3}
   player: {fileID: 0}
   inventory: {fileID: 0}
-  inventoryPrefab: {fileID: 0}
+  inventoryPrefab: {fileID: 1852285493}
 --- !u!1 &1852285493
 GameObject:
   m_ObjectHideFlags: 0
