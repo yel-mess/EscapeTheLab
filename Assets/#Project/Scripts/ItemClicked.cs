@@ -9,16 +9,16 @@ public class ItemClicked : MonoBehaviour, ISelectHandler
     // public bool selected = false;
 
     //faire une vcariable qd l'item est sélectionner
-    public GameObject player;
-    PlayerController playerRigidBody;
+    //public GameObject player;
+    //PlayerController playerRigidBody;
     public static ItemData lastSelectedItem;
     void Start(){
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
     }
     public void Click(){
         Debug.Log(GetComponent<ItemView>().itemData.itemName);
         //Destroy(gameObject);
-        playerRigidBody.rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        //playerRigidBody.rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
     }
     public void OnSelect(BaseEventData eventData){
         //selected = true;
