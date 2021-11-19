@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb2d;
 
+    ItemClicked itemClicked;
+
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         //animator = GetComponent<Animator>();
