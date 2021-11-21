@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private bool leftClickPressed = false;
-    //private bool isMoving = false;
+    bool isMoving = true;
     //private Animator animator;
     
     public float movementSpeed = 10f;
@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context) {
         if (context.performed) {
             leftClickPressed = true;
+        }
+    }
+    public void StopMoving(){
+        if(ItemClicked.selected){
+
         }
     }
 }
