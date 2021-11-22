@@ -14,6 +14,8 @@ public class SceneChanger : MonoBehaviour
     //public Gameobject itemPrefab;
     public ItemData requiredItem;
     public bool isOpen = false;
+    public Animator transition;
+    public float transitionTime = 1f;
     //Inventory itemInventory;
     void Start(){
         
@@ -36,17 +38,25 @@ public class SceneChanger : MonoBehaviour
         else if (!isOpen && requiredItem != null){
             
             if(ItemClicked.lastSelectedItem != null && requiredItem == ItemClicked.lastSelectedItem){
-                Debug.Log("correct item !");
                 isOpen = true;
-                SceneManager.LoadScene(sceneName);
+                //SceneManager.LoadScene(sceneName); //replace with coroutine
+                StartCoroutine(LoadLevel(sceneName));
             }
-                
-            //Debug.Log("Door is locked but you could open it");
         }
 
         //porte ouverte
         else {
-            SceneManager.LoadScene(sceneName);
+            //SceneManager.LoadScene(sceneName); // replace with coroutine
+            StartCoroutine(LoadLevel(sceneName));
+        }
+        
+        IEnumerator LoadLevel(string scene){
+            //Play animation
+            transition.SetTrigger("Start");
+            //wait
+            yield return new WaitForSeconds(transitionTime);
+            //LoadScene
+            SceneManager.LoadScene(scene);
         }
         // if(itemClicked.selected){
         //     //si requiredItem == l'icône de l'item

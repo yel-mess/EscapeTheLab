@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Canned Food
   type: 1
   description: random description
-  icon: {fileID: 21300000, guid: 3c680c49d3d599541815f6d191d6e90a, type: 3}
+  icon: {fileID: 21300000, guid: 21defb3a2c908724c8c246b6ca035434, type: 3}
