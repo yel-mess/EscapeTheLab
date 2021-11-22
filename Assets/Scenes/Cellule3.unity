@@ -4307,6 +4307,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: f32ab793168f9db4b9ad08c9a2ed2528, type: 3}
+    - target: {fileID: 2637562367481287112, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4175422971984984691, guid: 343dddb780d89cf4087f70277d55d276, type: 3}
       propertyPath: m_Name
       value: DoorHoverCanva

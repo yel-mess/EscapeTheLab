@@ -49,21 +49,10 @@ public class SceneChanger : MonoBehaviour
             //SceneManager.LoadScene(sceneName); // replace with coroutine
             StartCoroutine(LoadLevel(sceneName));
         }
-        
-        IEnumerator LoadLevel(string scene){
-            //Play animation
+    }
+    IEnumerator LoadLevel(string scene){
             transition.SetTrigger("Start");
-            //wait
             yield return new WaitForSeconds(transitionTime);
-            //LoadScene
             SceneManager.LoadScene(scene);
         }
-        // if(itemClicked.selected){
-        //     //si requiredItem == l'icône de l'item
-        //     if(requiredItem == GetComponent<ItemView>().itemData.icon){
-        //         isOpen = true;
-        //         SceneManager.LoadScene(sceneName);
-        //     }
-        // }
-    }
 }
