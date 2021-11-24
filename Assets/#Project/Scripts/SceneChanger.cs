@@ -8,17 +8,15 @@ using UnityEngine.EventSystems;
 public class SceneChanger : MonoBehaviour
 {
     public string sceneName;
-
-    //= Gamebject.Find("Item").GetComponent<ItemClicked>();
     public ItemData itemData;
-    //public Gameobject itemPrefab;
+    public GameObject playerPrefab;
     public ItemData requiredItem;
     public bool isOpen = false;
     public Animator transition;
     public float transitionTime = 1f;
-    //Inventory itemInventory;
+    GameObject destroyedItem;
     void Start(){
-        
+        playerPrefab = GameObject.FindGameObjectWithTag("Player");
     }
     void OnMouseOver() {
         if(Input.GetMouseButtonUp(1)){
@@ -26,7 +24,7 @@ public class SceneChanger : MonoBehaviour
         }
         //s'il n y a pas d'item --> ouvre
         //si l'item correspond --> ouvre
-        //si l'item ne correspond pas --> ferme
+        //si l'item ne correspond pas ou pas d'item --> ferme
     }
     public void CheckIfCorrect(){
 
@@ -38,12 +36,11 @@ public class SceneChanger : MonoBehaviour
         else if (!isOpen && requiredItem != null){
             
             if(ItemClicked.lastSelectedItem != null && requiredItem == ItemClicked.lastSelectedItem){
+                //détruire l'objet
                 isOpen = true;
-                //SceneManager.LoadScene(sceneName); //replace with coroutine
                 StartCoroutine(LoadLevel(sceneName));
             }
         }
-
         //porte ouverte
         else {
             //SceneManager.LoadScene(sceneName); // replace with coroutine
