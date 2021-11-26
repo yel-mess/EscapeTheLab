@@ -206,6 +206,7 @@ MonoBehaviour:
   deathRange: 0
   hitRange: 1
   moveSpeed: 2
+  sceneName: GameOver
   player: {fileID: 0}
 --- !u!95 &4888161126717742165
 Animator:

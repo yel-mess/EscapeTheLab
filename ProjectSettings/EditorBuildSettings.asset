@@ -18,6 +18,30 @@ EditorBuildSettings:
     path: Assets/Scenes/HallwayA.unity
     guid: 60df262b769d1534eb34b5a604ac839c
   - enabled: 1
+    path: Assets/Scenes/HallwayB.unity
+    guid: f737acfc25a5ff442a6f4f27a823b580
+  - enabled: 1
+    path: Assets/Scenes/HallwayC.unity
+    guid: 45516fb3a411b9241929fccdefd37133
+  - enabled: 1
+    path: Assets/Scenes/Infirmary.unity
+    guid: d7349d095b8343d468e55b7dc2ba5008
+  - enabled: 1
+    path: Assets/Scenes/Bathroom.unity
+    guid: 09e8d8a0008e0c543bb3498444fc5382
+  - enabled: 1
+    path: Assets/Scenes/MainHall.unity
+    guid: 4e072aa0fce3c574281088a921bab1f1
+  - enabled: 1
+    path: Assets/Scenes/Cellule5.unity
+    guid: d60957e72f4cecc4fa117989449c0eee
+  - enabled: 1
+    path: Assets/Scenes/StorageRoom.unity
+    guid: b80ef487f6646c6499fc95f03591d059
+  - enabled: 1
+    path: Assets/Scenes/TestingRoom.unity
+    guid: d106e2fe2a838f346a5a62a03f90cd2b
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 79ad0d7c791dbf148a0c6df6d60460a3
   m_configObjects: {}

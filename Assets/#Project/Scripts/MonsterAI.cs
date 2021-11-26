@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -13,12 +13,14 @@ public class MonsterAI : MonoBehaviour
     public float hitRange;
     public float moveSpeed;
     //GameObject notice;
+    public string sceneName;
 
     [SerializeField]
     GameObject player; //keep track of the player
     Rigidbody2D rb2d; //il faut pouvoir accéder au rigidBody
     SpriteRenderer spriteRenderer;
     //public UnityEvent whenTouchPlayer;
+    public GameObject ignoreObjects;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class MonsterAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ignoreObjects.GetComponent<Collider2D>());
     }
 
     void Update()
@@ -112,7 +115,8 @@ public class MonsterAI : MonoBehaviour
         //     Destroy(player);
         // }
         if(collision.CompareTag("Player")){
-            Debug.Log("GAME OVER");
+            //lancer l'animation
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

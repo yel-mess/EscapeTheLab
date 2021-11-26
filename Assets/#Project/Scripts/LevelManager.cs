@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public GameObject player;
     public GameObject inventory;
     public GameObject inventoryPrefab;
-
+    public string sceneName;
     void Awake()
     {
         if(instance == null) {
@@ -17,8 +18,6 @@ public class LevelManager : MonoBehaviour
             instance = this;
             player = Instantiate(playerPrefab);
             inventory = Instantiate(inventoryPrefab);
-            DontDestroyOnLoad(player);
-            DontDestroyOnLoad(inventory);
         }
         else {
             Destroy(gameObject);
@@ -27,6 +26,13 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        
+        if(SceneManager.GetActiveScene().name != sceneName){
+            DontDestroyOnLoad(player);
+            DontDestroyOnLoad(inventory);
+        }
+        else {
+            Destroy(player);
+            Destroy(inventory);
+        }
     }
 }
