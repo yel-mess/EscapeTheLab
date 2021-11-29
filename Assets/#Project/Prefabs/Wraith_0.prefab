@@ -202,12 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596920b486d1b4548b60e857ee1dcf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agroRange: 4.5
-  deathRange: 0
-  hitRange: 1
-  moveSpeed: 2
+  hitRange: 10
+  speed: {x: 1, y: 0}
   sceneName: GameOver
   player: {fileID: 0}
+  ignoreObjects: {fileID: 0}
 --- !u!95 &4888161126717742165
 Animator:
   serializedVersion: 3
