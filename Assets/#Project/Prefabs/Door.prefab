@@ -147,8 +147,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: HallwayA
   itemData: {fileID: 0}
-  requiredItem: {fileID: 11400000, guid: d504ca18e8926654984ca77e903352a0, type: 2}
+  playerPrefab: {fileID: 0}
+  requiredItem: {fileID: 11400000, guid: 3e379cf7ccb9b0a45ba44764b4737700, type: 2}
   isOpen: 0
+  transition: {fileID: 0}
+  transitionTime: 2
 --- !u!114 &7348677382600170337
 MonoBehaviour:
   m_ObjectHideFlags: 0

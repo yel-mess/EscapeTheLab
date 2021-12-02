@@ -10,14 +10,16 @@ public class LevelManager : MonoBehaviour
     public GameObject player;
     public GameObject inventory;
     public GameObject inventoryPrefab;
-    public string sceneName;
+    //public string sceneName;
     void Awake()
     {
         if(instance == null) {
             DontDestroyOnLoad(gameObject);
             instance = this;
             player = Instantiate(playerPrefab);
+            DontDestroyOnLoad(player);
             inventory = Instantiate(inventoryPrefab);
+            DontDestroyOnLoad(inventory);
         }
         else {
             Destroy(gameObject);
@@ -26,13 +28,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().name != sceneName){
-            DontDestroyOnLoad(player);
-            DontDestroyOnLoad(inventory);
-        }
-        else {
-            Destroy(player);
-            Destroy(inventory);
-        }
+        // if(SceneManager.GetActiveScene().name != sceneName{   
+        // }
     }
 }

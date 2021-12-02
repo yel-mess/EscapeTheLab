@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         if(!ItemClicked.usingItem){
             //Debug.Log(itemIsSelected);
             if(leftClickPressed) {
-                print("last poistion");
+                //print("last poistion");
             //récupère la position de la souris et bouge le joueur
             lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
                 deplacement = movementSpeed * Time.deltaTime;
                 lastClickedPos.y = 0f;
                 transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, deplacement);
-                print("test move");
+                //print("test move");
             }
             //isMoving = false;
             leftClickPressed = false;
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Move(InputAction.CallbackContext context) {
         if (context.performed) {
-            print("click to move");
+            //print("click to move");
             leftClickPressed = true;
         }
     }

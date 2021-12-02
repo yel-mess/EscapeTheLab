@@ -26,17 +26,17 @@ public class ItemViewController : MonoBehaviour
 
         for (int i = 0; i < inventoryHolder.inventory.Count; i++)
         {
-            // Debug.Log("adding item : " + index);
             if (!itemsDisplayed.ContainsKey(inventoryHolder.inventory[i]))
             {
                 var itemGO = GameObject.Instantiate(itemViewPrefab, inventoryViewParent);
                 itemGO.GetComponent<ItemView>().InitItem(inventoryHolder.inventory[i]);
                 itemsDisplayed.Add(inventoryHolder.inventory[i], itemGO);
             }
-            
-            
-            // index++;
-            // Debug.Log(inventoryHolder.inventory.Count);
+            // faire en sorte d'updater la view pour la reseter
+            // if()
+            // {
+
+            // }
         }
         //pour chaque objets dans l'inventaire
 

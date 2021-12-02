@@ -15,6 +15,7 @@ public class SceneChanger : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     GameObject destroyedItem;
+    ItemViewController itemViewController;
     void Start(){
         playerPrefab = GameObject.FindGameObjectWithTag("Player");
     }
@@ -37,6 +38,8 @@ public class SceneChanger : MonoBehaviour
             
             if(ItemClicked.lastSelectedItem != null && requiredItem == ItemClicked.lastSelectedItem){
                 //détruire l'objet
+                //Debug.Log(itemViewController.itemGO);
+                //Destroy(itemViewController.itemGO);
                 isOpen = true;
                 StartCoroutine(LoadLevel(sceneName));
             }

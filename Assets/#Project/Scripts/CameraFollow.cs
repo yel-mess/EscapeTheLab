@@ -10,11 +10,13 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset;
     // [Range(1,10)]
     // public float smoothFactor;
+    public float minValue = -10f;
+    public float maxValue = 10f;
     
-    // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
@@ -26,5 +28,6 @@ public class CameraFollow : MonoBehaviour
         Vector3 targetPosition = target.transform.position + offset;
         // Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor*Time.deltaTime);
         transform.position = targetPosition;
+        //transform.position = new Vector3(Mathf.Clamp(target.transform.position.x, minValue, maxValue), target.transform.position.y, target.transform.position.z);
     }
 }

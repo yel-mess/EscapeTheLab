@@ -85,4 +85,12 @@ public class MonsterAI : MonoBehaviour
             nextID += idChangeValue;
         }
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            Debug.Log("Touched player");
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 }
