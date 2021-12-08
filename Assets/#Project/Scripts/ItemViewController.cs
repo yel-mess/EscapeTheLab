@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +14,7 @@ public class ItemViewController : MonoBehaviour
     [HideInInspector]
     public Dictionary<ItemData, GameObject> itemsDisplayed = new Dictionary<ItemData, GameObject>();
     ItemView itemView;
+    Menu menu;
     //int index = 0;
 
     private void Start()
@@ -28,15 +29,17 @@ public class ItemViewController : MonoBehaviour
         {
             if (!itemsDisplayed.ContainsKey(inventoryHolder.inventory[i]))
             {
-                var itemGO = GameObject.Instantiate(itemViewPrefab, inventoryViewParent);
+                itemGO = GameObject.Instantiate(itemViewPrefab, inventoryViewParent);
                 itemGO.GetComponent<ItemView>().InitItem(inventoryHolder.inventory[i]);
                 itemsDisplayed.Add(inventoryHolder.inventory[i], itemGO);
             }
             // faire en sorte d'updater la view pour la reseter
-            // if()
-            // {
-
-            // }
+            //s'il y a un item dans l'inventaire et que le jeu recommence --> effacer l'inventaire
+            else if(menu.gameRestart)
+            {
+                itemGO = null;
+            }
+            
         }
         //pour chaque objets dans l'inventaire
 

@@ -15,6 +15,8 @@ public class MonsterAI : MonoBehaviour
     //Speed of movement
     public float speed = 2;
 
+    public bool playerDeath;
+
     void Reset()
     {
         Init();

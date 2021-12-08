@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     //public string sceneName;
     //PlayerController playerController;
     //GameObject player;
+    public bool gameRestart;
 
     void Start()
     {
@@ -23,10 +24,12 @@ public class Menu : MonoBehaviour
     }
     public void RestartGame(){
 
+        gameRestart = true;
         SceneManager.LoadScene("Cellule3");
         Debug.Log("before removing");
         LevelManager.instance.inventory.GetComponentInChildren<Inventory>().RemoveItem();
         Debug.Log("after removing");
+        gameRestart = false;
         // playerController.leftClickPressed = false;
         // playerController.lastClickedPos.x = player.transform.position.x;
     }
