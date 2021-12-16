@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     //[HideInInspector]
     //public bool ItemIsdestroyed = false;
     public ItemData itemData;
+    public string popUp;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,8 @@ public class Item : MonoBehaviour
     void OnMouseOver(){
         if(Input.GetMouseButtonUp(1)){
             //description de l'item (texte aparait)
-
+            PopUpSystem pop = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PopUpSystem>();
+            pop.PopUp(popUp);
             FindObjectOfType<Inventory>().AddItem(itemData);
             Destroy(gameObject);
             //ItemIsdestroyed = true;

@@ -13,6 +13,13 @@ public class PopUpSystem : MonoBehaviour
     {
         popUpBox.SetActive(true);
         popUpText.text = text;
-        animator.SetTrigger("pop");
+        animator.SetTrigger("Open");
+    }
+    public void ClosePopUp()
+    {
+        // if(Input.GetMouseButtonUp(1) && animator.SetTrigger("Open"))
+        // {
+        //     animator.SetTrigger("Close");
+        // }
     }
 }
