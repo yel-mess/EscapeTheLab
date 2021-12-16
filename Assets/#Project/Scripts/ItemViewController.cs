@@ -23,8 +23,11 @@ public class ItemViewController : MonoBehaviour
     }
     public void UpdateView()
     {
+        foreach (ItemData itemData in itemsDisplayed.Keys) {
+            Destroy(itemsDisplayed[itemData]);
+        }
+        itemsDisplayed.Clear();
         //créer une instance de ItemView et on appelle la méthode InitItem pour l'initialiser avec ItemData pour chaque item dans l'inventaire
-
         for (int i = 0; i < inventoryHolder.inventory.Count; i++)
         {
             if (!itemsDisplayed.ContainsKey(inventoryHolder.inventory[i]))
@@ -35,10 +38,6 @@ public class ItemViewController : MonoBehaviour
             }
             // faire en sorte d'updater la view pour la reseter
             //s'il y a un item dans l'inventaire et que le jeu recommence --> effacer l'inventaire
-            else if(menu.gameRestart)
-            {
-                itemGO = null;
-            }
             
         }
         //pour chaque objets dans l'inventaire
