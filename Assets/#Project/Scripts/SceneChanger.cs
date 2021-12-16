@@ -17,7 +17,7 @@ public class SceneChanger : MonoBehaviour
     GameObject destroyedItem;
     ItemViewController itemViewController;
     void Start(){
-        playerPrefab = GameObject.FindGameObjectWithTag("Player");
+        //playerPrefab = GameObject.FindGameObjectWithTag("Player");
     }
     void OnMouseOver() {
         if(Input.GetMouseButtonUp(1)){

@@ -15,7 +15,7 @@ public class CameraFollow : MonoBehaviour
     
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
+        //target = GameObject.FindGameObjectWithTag("Player");
         
     }
 

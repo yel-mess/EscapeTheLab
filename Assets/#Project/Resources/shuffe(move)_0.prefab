@@ -118,9 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee973360eeda4146a5be751ae4ba916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftClickPressed: 0
   movementSpeed: 5
-  isMoving: 1
+  lastClickedPos: {x: 0, y: 0}
   itemViewController: {fileID: 0}
+  deplacement: 0
   rb2d: {fileID: 0}
 --- !u!114 &128674082523659511
 MonoBehaviour:
