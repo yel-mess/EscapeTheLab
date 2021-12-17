@@ -7,32 +7,33 @@ public class PopUpSystem : MonoBehaviour
 {
     public GameObject popUpBox;
     public Animator animator;
-    public TMP_Text popUpText;
-    //string triggerName = "Open";
-    //AnimatorClipInfo[] currentClipInfo;
     //bool popUpIsActive = false;
-
+    //TypeWriterEffect typeWriterEffect;
     public void Start()
     {
-        //animator = GetComponent<Animator>();
-        //currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        //typeWriterEffect = popUpBox.GetComponent<TypeWriterEffect>();
+        //print(typeWriterEffect.completed);
     }
-
-    public void PopUp(string text)
+    public void Update()
+    {
+        // if(Input.GetMouseButtonUp(1))
+        // {
+        //     animator.SetTrigger("Close");
+        // }
+    } 
+    public void PopUp()
     {
         popUpBox.SetActive(true);
-        popUpText.text = text;
-        //popUpIsActive = true;
         animator.SetTrigger("Open");
-        //Debug.Log("Open");
-        //clipName = animator.GetCurrentAnimatorClipInfo
     }
-    // public void OnMouseOver()
+    
+    // IEnumerator ClosePopUp()
     // {
-    //     if(Input.GetMouseButtonUp(1) && popUpIsActive)
-    //     {
-    //         popUpIsActive = false;
-    //         animator.SetTrigger("Close");
-    //     }
+    //     //attendre que le texte s'affiche en entier
+        
     // }
+    public void ClosePopUp()
+    {
+        animator.SetTrigger("Close");
+    }
 }

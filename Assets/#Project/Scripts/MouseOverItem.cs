@@ -10,8 +10,6 @@ public class MouseOverItem : MonoBehaviour
     {
         objectType.SetActive(false);
     }
-
-    // Update is called once per frame
     void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -19,6 +17,7 @@ public class MouseOverItem : MonoBehaviour
     }
     void OnMouseOver() {
         objectType.SetActive(true);
+        print("mouse over works");
     }
     void OnMouseExit() {
         objectType.SetActive(false);

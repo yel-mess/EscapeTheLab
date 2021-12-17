@@ -6,17 +6,14 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     //private bool ItemPickedUp = false;
-    //[HideInInspector]
-    //public bool ItemIsdestroyed = false;
     public ItemData itemData;
-    public string popUp;
-    // Start is called before the first frame update
+
+    //public string popUp;
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -25,10 +22,9 @@ public class Item : MonoBehaviour
         if(Input.GetMouseButtonUp(1)){
             //description de l'item (texte aparait)
             PopUpSystem pop = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PopUpSystem>();
-            pop.PopUp(popUp);
+            pop.PopUp();
             FindObjectOfType<Inventory>().AddItem(itemData);
             Destroy(gameObject);
-            //ItemIsdestroyed = true;
         }
     }
 }
