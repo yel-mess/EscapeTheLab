@@ -20,10 +20,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb2d;
     ItemClicked itemClicked;
+    Animator animator;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
@@ -33,31 +35,32 @@ public class PlayerController : MonoBehaviour
             lastClickedPos.x = transform.position.x;
         }
         if(!ItemClicked.usingItem){
-            //Debug.Log(itemIsSelected);
             if(leftClickPressed) {
-                //print("last poistion");
-            //récupère la position de la souris et bouge le joueur
+            
             lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
 
             if (lastClickedPos.x != transform.position.x) {
+                animator.SetBool("Moving", true);
                 if(lastClickedPos.x < transform.position.x && spriteRenderer.flipX == false) {
-                    //animator.SetBool("Left", true);
                     spriteRenderer.flipX = true;
                 }
                 else if (lastClickedPos.x > transform.position.x && spriteRenderer.flipX == true) {
                     spriteRenderer.flipX = false;
                 }
-                //float remainingDistance = lastClickedPos.x - transform.position.x;
-                //Vector2 direction = new Vector2 (x, 0).normalized;
-                //transform.position = new Vector2(transform.position += remainingDistance), 0).normalized * deplacement;
-
+                
                 deplacement = movementSpeed * Time.deltaTime;
                 lastClickedPos.y = 1.58f;
                 transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, deplacement);
+                
                 //print("test move");
             }
+            else
+            {
+                animator.SetBool("Moving", false);
+            }
             //isMoving = false;
+            
             leftClickPressed = false;
         }
         
