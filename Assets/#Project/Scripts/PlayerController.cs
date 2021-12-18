@@ -22,22 +22,18 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb2d;
     ItemClicked itemClicked;
     public Button button;
+    
     Animator animator;
+    public bool facingRight = true;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         button.onClick.AddListener(TaskOnClick);
-    }
-    void TaskOnClick()
-    {
-        leftClickPressed = false;
-        lastClickedPos.x = transform.position.x;
+        print(transform.localScale);
     }
     void Update() {
-
-        
 
         if(ItemClicked.usingItem){
             leftClickPressed = false;
@@ -51,11 +47,11 @@ public class PlayerController : MonoBehaviour
 
             if (lastClickedPos.x != transform.position.x) {
                 animator.SetBool("Moving", true);
-                if(lastClickedPos.x < transform.position.x && spriteRenderer.flipX == false) {
-                    spriteRenderer.flipX = true;
+                if(lastClickedPos.x < transform.position.x && transform.localScale.x == 1) {
+                    Flip();
                 }
-                else if (lastClickedPos.x > transform.position.x && spriteRenderer.flipX == true) {
-                    spriteRenderer.flipX = false;
+                else if (lastClickedPos.x > transform.position.x && transform.localScale.x == -1) {
+                    Flip();
                 }
                 
                 deplacement = movementSpeed * Time.deltaTime;
@@ -73,6 +69,17 @@ public class PlayerController : MonoBehaviour
             leftClickPressed = false;
         }
         
+    }
+    void TaskOnClick()
+    {
+        leftClickPressed = false;
+        lastClickedPos.x = transform.position.x;
+    }
+    void Flip()
+    {
+        Vector3 playerScale = transform.localScale;
+        playerScale.x *= -1;
+        transform.localScale = playerScale;
     }
     public void Move(InputAction.CallbackContext context) {
         if (context.performed) {

@@ -17,7 +17,6 @@ public class MouseOverItem : MonoBehaviour
     }
     void OnMouseOver() {
         objectType.SetActive(true);
-        print("mouse over works");
     }
     void OnMouseExit() {
         objectType.SetActive(false);
