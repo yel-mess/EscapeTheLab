@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
 {
     //private bool ItemPickedUp = false;
     public ItemData itemData;
+    TypeWriterEffect typeWriterEffect;
 
     //public string popUp;
     

@@ -27,7 +27,7 @@ public class TypeWriterEffect : MonoBehaviour
         StartCoroutine("RevealText");
     }
 
-    IEnumerator RevealText()
+    public IEnumerator RevealText()
     {
         textMeshPro.ForceMeshUpdate();
 
@@ -55,11 +55,4 @@ public class TypeWriterEffect : MonoBehaviour
         }
 
     }
-    // void OnMouseOver()
-    // {
-    //     if(Input.GetMouseButtonUp(1))
-    //     {
-    //         delay = 0.0f;
-    //     }
-    // }
 }

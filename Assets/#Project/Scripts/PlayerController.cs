@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -20,15 +21,23 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb2d;
     ItemClicked itemClicked;
+    public Button button;
     Animator animator;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        button.onClick.AddListener(TaskOnClick);
     }
-
+    void TaskOnClick()
+    {
+        leftClickPressed = false;
+        lastClickedPos.x = transform.position.x;
+    }
     void Update() {
+
+        
 
         if(ItemClicked.usingItem){
             leftClickPressed = false;

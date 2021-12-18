@@ -7,11 +7,11 @@ public class PopUpSystem : MonoBehaviour
 {
     public GameObject popUpBox;
     public Animator animator;
-    //bool popUpIsActive = false;
-    //TypeWriterEffect typeWriterEffect;
+    TypeWriterEffect typeWriterEffect;
     public void Start()
     {
-        //typeWriterEffect = popUpBox.GetComponent<TypeWriterEffect>();
+        
+        typeWriterEffect = GetComponent<TypeWriterEffect>();
         //print(typeWriterEffect.completed);
     }
     public void Update()
@@ -25,6 +25,8 @@ public class PopUpSystem : MonoBehaviour
     {
         popUpBox.SetActive(true);
         animator.SetTrigger("Open");
+        //typeWriterEffect.StartCoroutine("RevealText");
+
     }
     
     // IEnumerator ClosePopUp()
