@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
                 //transform.position = new Vector2(transform.position += remainingDistance), 0).normalized * deplacement;
 
                 deplacement = movementSpeed * Time.deltaTime;
-                lastClickedPos.y = 1f;
+                lastClickedPos.y = 1.58f;
                 transform.position = Vector2.MoveTowards(transform.position, lastClickedPos, deplacement);
                 //print("test move");
             }
