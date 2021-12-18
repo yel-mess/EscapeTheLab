@@ -6794,7 +6794,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896191245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0.6}
+  m_LocalPosition: {x: 0, y: 3, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 838008889}
@@ -6966,10 +6966,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1198460422, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1198460424, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1802315140}
+    - target: {fileID: 1198460426, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
+      propertyPath: m_margin.w
+      value: 92.749725
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198460426, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
+      propertyPath: m_margin.x
+      value: 209.59021
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198460426, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
+      propertyPath: m_margin.y
+      value: 105.32077
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198460426, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
+      propertyPath: m_margin.z
+      value: 202.3628
+      objectReference: {fileID: 0}
     - target: {fileID: 1487963894966746480, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7057,6 +7077,10 @@ PrefabInstance:
     - target: {fileID: 1487963894966746485, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
       propertyPath: m_Name
       value: PopUpCanva
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487963894966746485, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
@@ -8959,6 +8983,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 793412530, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 793412530, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2284326386458552087, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
       propertyPath: button
       value: 
@@ -9024,6 +9056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tin Can
       objectReference: {fileID: 0}
+    - target: {fileID: 9215242276745426799, guid: 692f14594149b154389b9624582120db, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9215242276745426800, guid: 692f14594149b154389b9624582120db, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -9038,7 +9074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9215242276745426800, guid: 692f14594149b154389b9624582120db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9215242276745426800, guid: 692f14594149b154389b9624582120db, type: 3}
       propertyPath: m_LocalRotation.w
