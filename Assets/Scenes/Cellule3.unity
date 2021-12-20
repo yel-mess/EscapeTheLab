@@ -8444,6 +8444,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389471058}
   m_CullTransparentMesh: 1
+--- !u!1 &1465343322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1487963894966746485, guid: 7b86c584ab181764a8bbdd055cd2695d, type: 3}
+  m_PrefabInstance: {fileID: 1125350987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1502114983
 GameObject:
   m_ObjectHideFlags: 0
@@ -9661,6 +9666,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7188821886014968805, guid: 31d37bc33779da34ca71ee63f3d1b335, type: 3}
+      propertyPath: popUpCanva
+      value: 
+      objectReference: {fileID: 1465343322}
     - target: {fileID: 7188821886014968807, guid: 31d37bc33779da34ca71ee63f3d1b335, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -9813,14 +9822,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 793412530, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
-      propertyPath: m_Intensity
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 793412530, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2284326386458552087, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
       propertyPath: button
       value: 
@@ -9828,10 +9829,6 @@ PrefabInstance:
     - target: {fileID: 8829649527406511496, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
       propertyPath: m_Name
       value: Player_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829649527406511497, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8829649527406511502, guid: 888dcf5e854eac74290918b6c8c6c310, type: 3}
       propertyPath: m_RootOrder
