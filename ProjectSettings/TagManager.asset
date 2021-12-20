@@ -11,6 +11,7 @@ TagManager:
   - LevelManager
   - _Player
   - PopUp
+  - PopUpButton
   layers:
   - Default
   - TransparentFX

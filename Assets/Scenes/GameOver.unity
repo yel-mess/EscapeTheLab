@@ -290,7 +290,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 521325856}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -388,12 +388,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 521325854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774b04dc3aa0c60459645068364b2164, type: 3}
+  m_Script: {fileID: 11500000, guid: 36a9c013e41356f44b0046df71beb784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanva: {fileID: 0}
-  creditCanva: {fileID: 0}
-  controlCanva: {fileID: 0}
   gameRestart: 0
 --- !u!1 &599940471
 GameObject:
@@ -813,7 +810,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 521325856}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
         m_MethodName: GoToMenu
         m_Mode: 1
         m_Arguments:
@@ -1436,7 +1433,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 521325856}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:

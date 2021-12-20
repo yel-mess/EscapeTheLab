@@ -1366,6 +1366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wraith_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7155476825306296000, guid: 7b09f41e3366f454196e2ae95485d073, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b09f41e3366f454196e2ae95485d073, type: 3}
 --- !u!4 &763227333 stripped
