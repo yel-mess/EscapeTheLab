@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: u/dylana62, styloo, Kronovi-, Alex's Assets, PetricakeGames
+  m_text: u/dylana62, styloo, Kronovi-, Alex's Assets, PetricakeGames, Ganamoda
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
   m_sharedMaterial: {fileID: -8248457618655205016, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
@@ -1954,7 +1954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 208.24902, y: -59}
+  m_AnchoredPosition: {x: 208.24902, y: -71}
   m_SizeDelta: {x: 1214.5007, y: 144.3002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980294724
@@ -2518,7 +2518,6 @@ MonoBehaviour:
   startCanva: {fileID: 638581742}
   creditCanva: {fileID: 200005492}
   controlCanva: {fileID: 0}
-  gameRestart: 0
 --- !u!1 &1553280756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,7 +3012,6 @@ MonoBehaviour:
   startCanva: {fileID: 1608068793}
   creditCanva: {fileID: 200005492}
   controlCanva: {fileID: 638581742}
-  gameRestart: 0
 --- !u!1 &1720498641
 GameObject:
   m_ObjectHideFlags: 0

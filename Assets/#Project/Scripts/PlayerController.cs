@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb2d;
     ItemClicked itemClicked;
-    //public Button button;
+    public Button button;
     
     Animator animator;
     public bool facingRight = true;
@@ -30,7 +30,16 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        //button.onClick.AddListener(TaskOnClick);
+        GameObject popUpButtonGo = GameObject.FindGameObjectWithTag("PopUpButton");
+        if (button == null)
+        {
+            if (popUpButtonGo == null)
+            {
+                Debug.LogError("No object with PopupButton tag in this scene.");
+            }
+            button = popUpButtonGo.GetComponent<Button>();
+        }
+        button.onClick.AddListener(TaskOnClick);
         print(transform.localScale);
     }
     void Update() {
