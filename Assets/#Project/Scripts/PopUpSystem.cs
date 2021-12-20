@@ -8,32 +8,18 @@ public class PopUpSystem : MonoBehaviour
     public GameObject popUpBox;
     public Animator animator;
     TypeWriterEffect typeWriterEffect;
+    public TMP_Text popUpText;
     public void Start()
     {
         
         typeWriterEffect = GetComponent<TypeWriterEffect>();
-        //print(typeWriterEffect.completed);
     }
-    public void Update()
-    {
-        // if(Input.GetMouseButtonUp(1))
-        // {
-        //     animator.SetTrigger("Close");
-        // }
-    } 
-    public void PopUp()
+    public void PopUp(string text)
     {
         popUpBox.SetActive(true);
+        popUpText.text = text;
         animator.SetTrigger("Open");
-        //typeWriterEffect.StartCoroutine("RevealText");
-
     }
-    
-    // IEnumerator ClosePopUp()
-    // {
-    //     //attendre que le texte s'affiche en entier
-        
-    // }
     public void ClosePopUp()
     {
         animator.SetTrigger("Close");

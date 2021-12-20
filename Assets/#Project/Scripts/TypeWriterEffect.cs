@@ -12,7 +12,7 @@ public class TypeWriterEffect : MonoBehaviour
     string fullText;
     TMP_Text textMeshPro;
     public bool completed = false;
-    public GameObject nextButton;
+    //public GameObject nextButton;
 
     void Awake()
     {

@@ -5,25 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {
-    //private bool ItemPickedUp = false;
     public ItemData itemData;
-    TypeWriterEffect typeWriterEffect;
+    public string popUp;
 
-    //public string popUp;
-    
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
     void OnMouseOver(){
         if(Input.GetMouseButtonUp(1)){
             //description de l'item (texte aparait)
             PopUpSystem pop = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PopUpSystem>();
-            pop.PopUp();
+            pop.PopUp(popUp);
             FindObjectOfType<Inventory>().AddItem(itemData);
             Destroy(gameObject);
         }
