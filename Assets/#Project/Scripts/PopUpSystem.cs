@@ -7,12 +7,11 @@ public class PopUpSystem : MonoBehaviour
 {
     public GameObject popUpBox;
     public Animator animator;
-    TypeWriterEffect typeWriterEffect;
+    //TypeWriterEffect typeWriterEffect;
     public TMP_Text popUpText;
     public void Start()
     {
-        
-        typeWriterEffect = GetComponent<TypeWriterEffect>();
+        //typeWriterEffect = GetComponent<TypeWriterEffect>();
     }
     public void PopUp(string text)
     {

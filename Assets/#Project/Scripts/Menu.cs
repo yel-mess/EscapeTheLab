@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     //GameObject player;
     public GameObject startCanva;
     public GameObject creditCanva;
+    public GameObject controlCanva;
     public bool gameRestart;
 
     void Awake()
@@ -42,9 +43,10 @@ public class Menu : MonoBehaviour
         //SceneManager.LoadScene("StartMenu");
         startCanva.SetActive(true);
         creditCanva.SetActive(false);
+        controlCanva.SetActive(false);
     }
 
-    public void GoToMenu() // start menu in game over scren
+    public void GoToMenu() // start menu in game over screen
     {
         SceneManager.LoadScene("StartMenu");
     }
@@ -54,8 +56,10 @@ public class Menu : MonoBehaviour
         startCanva.SetActive(false);
         //SceneManager.LoadScene("Credits");
     }
-    // void StopPlayerMovement()
-    // {
-        
-    // }
+
+    public void Controls()
+    {
+        controlCanva.SetActive(true);
+        startCanva.SetActive(false);
+    }
 }

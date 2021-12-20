@@ -14,6 +14,7 @@ public class SceneChanger : MonoBehaviour
     public float transitionTime = 1f;
     public string noItemPopUp;
     public string wrongItemPopUp;
+    public string doorClosedPopUp;
 
     void OnMouseOver() {
         if(Input.GetMouseButtonUp(1)){
@@ -24,7 +25,8 @@ public class SceneChanger : MonoBehaviour
 
         //porte fermée, infranchissable
         if(!isOpen && requiredItem == null){
-            Debug.Log("Door is locked");
+            PopUpSystem pop = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<PopUpSystem>();
+            pop.PopUp(doorClosedPopUp);
         }
 
         //porte fermée, peut s'ouvrir grâce à un objet

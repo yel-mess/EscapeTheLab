@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - LevelManager
   - _Player
+  - PopUp
   layers:
   - Default
   - TransparentFX
