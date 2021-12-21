@@ -9721,6 +9721,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 777443658}
     - target: {fileID: 7348677382600170398, guid: edf41667c464cbf478a46d63aec10111, type: 3}
+      propertyPath: transitionTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7348677382600170398, guid: edf41667c464cbf478a46d63aec10111, type: 3}
       propertyPath: wrongItemPopUp
       value: I can't use this item on this.
       objectReference: {fileID: 0}
