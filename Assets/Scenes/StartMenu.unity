@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: u/dylana62, styloo, Kronovi-, Alex's Assets, PetricakeGames, Ganamoda
+  m_text: dylana62, styloo, Kronovi-, Alex's Assets, PetricakeGames, Ganamoda
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
   m_sharedMaterial: {fileID: -8248457618655205016, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
@@ -3203,7 +3203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move around, select an object in you're inventory
+  m_text: Move around, select an object in your inventory
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
   m_sharedMaterial: {fileID: -8248457618655205016, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
