@@ -1366,7 +1366,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Aaaaannd... that's all folks ! The demo ends here !  Thank you for playing
-    and keep a look out for monthly updates !
+    and keep a look out for updates (maybe ?) !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
   m_sharedMaterial: {fileID: -8248457618655205016, guid: 0aa990b7e17d3204c9f0412f5caee5ff, type: 2}
@@ -1393,8 +1393,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 1.73
+  m_fontSizeBase: 1.73
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
